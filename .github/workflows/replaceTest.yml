@@ -35,7 +35,7 @@ jobs:
     - name: Replace test
       run: |
         sed -e 's/title/타이틀/g' sed_replace_test.txt
-        sed -e 's/\(title :\).*$/\1test/g' sed_replace_test.txt
+        sed -e '/\(title :\).*$/\1test/g' sed_replace_test.txt
         #sed -e 's/(title :).*$/\1test/g' sed_replace_test.txt > sed_replace_test.tmp.txt
         #mv sed_replace_test.tmp.txt sed_replace_test.txt
         #cat sed_replace_test.txt
