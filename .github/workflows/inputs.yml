@@ -1,0 +1,54 @@
+name: Action Test
+on:
+  workflow_dispatch:
+    inputs:
+      choice1:
+        description: 'choice1'
+        required: true
+        type: choice
+        options:
+          - cho-one
+          - cho-two
+      str1:
+        description: 'str1'
+        required: true
+        default: 'str1'
+        type: string
+      num1:
+        description: 'num1'
+        required: true
+        default: '123'
+        type: number
+      bool1:
+        description: 'bool1'
+        required: true
+        default: false
+        type: boolean
+      environment:
+        description: 'Environment'
+        type: environment
+        required: true
+env:
+  server: ${{vars.SERVER}}
+  test: test-var
+
+jobs:
+  job1:
+    name: input-vars
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+
+      - name: Get Vars
+        env:
+          NAME: ${{ vars.NAME }}
+        run: |
+          echo "choice1 : ${{ inputs.choice1 }}"
+          echo "str1 : ${{ inputs.str1 }}"
+          echo "num1 : ${{ inputs.num1 }}"
+          echo "bool1 : ${{ inputs.bool1 }}"
+          echo "environment : ${{ inputs.environment }}"
+          echo "env SERVER : $server"
+          echo "env NAME : $NAME"
+          echo "env test : $test"
+          echo "env var.SERVER : ${{ vars.SERVER }}"
