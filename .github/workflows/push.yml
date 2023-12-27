@@ -1,0 +1,22 @@
+name: push test
+
+on:
+  push:
+    branches: [ "no" ]
+
+env:
+  server: ${{vars.SERVER}}
+  test: test-var
+  
+jobs:
+  test:
+    name: test1
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo test
+        run: |
+          echo "env SERVER : $server"
+          echo "env NAME : $NAME"
+          echo "env test : $test"
+          echo "env var.SERVER : ${{ vars.SERVER }}"
+          
