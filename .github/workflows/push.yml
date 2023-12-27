@@ -2,10 +2,9 @@ name: push test
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "no" ]
 
 env:
-  server: ${{vars.SERVER}}
   test: test-var
   
 jobs:
@@ -15,8 +14,5 @@ jobs:
     steps:
       - name: echo test
         run: |
-          echo "env SERVER : $server"
-          echo "env NAME : $NAME"
           echo "env test : $test"
-          echo "env var.SERVER : ${{ vars.SERVER }}"
           
