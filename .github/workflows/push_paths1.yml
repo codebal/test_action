@@ -5,6 +5,7 @@ on:
     branches: [ "master" ]
     paths:
       - 'test/test1/**'
+      - 'test/common/**'
 
 env:
   test: test-var
