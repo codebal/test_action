@@ -1,0 +1,19 @@
+name: push test1
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'test/test1/**'
+
+env:
+  test: test-var
+  
+jobs:
+  test:
+    name: test1
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo test1 push
+        run: |
+          echo "push test/test1/**"
