@@ -11,7 +11,7 @@ env:
   
 jobs:
   test:
-    name: test1
+    name: test2
     runs-on: ubuntu-latest
     steps:
       - name: echo test2 push
