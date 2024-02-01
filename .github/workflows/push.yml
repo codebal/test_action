@@ -2,7 +2,9 @@ name: push test
 
 on:
   push:
-    branches: [ "no" ]
+    branches: [ "master" ]
+    paths:
+      - './test/test1/**'
 
 env:
   test: test-var
