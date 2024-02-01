@@ -1,10 +1,10 @@
-name: push test1
+name: push test2
 
 on:
   push:
     branches: [ "master" ]
     paths:
-      - 'test/test1/**'
+      - 'test/test2/**'
 
 env:
   test: test-var
@@ -14,6 +14,6 @@ jobs:
     name: test1
     runs-on: ubuntu-latest
     steps:
-      - name: echo test1 push
+      - name: echo test2 push
         run: |
-          echo "push test/test1/**"
+          echo "push test/test2/**"
