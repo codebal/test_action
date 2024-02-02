@@ -17,5 +17,5 @@ jobs:
     steps:
       - name: echo test1 push
         run: |
-          echo "github : ${{github.ref}}"
+          echo "github : ${{github}}"
           echo "push test/test1/**"
