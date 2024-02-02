@@ -20,4 +20,6 @@ jobs:
           echo "github.ref : ${{github.ref}}"
           echo "github.path : ${{github.path}}"
           echo "github.event_path : ${{github.event_path}}"
+          echo "github.ref_name : ${{github.ref_name}}"
+          echo "github.ref_type : ${{github.ref_type}}"
           echo "push test/test1/**"
