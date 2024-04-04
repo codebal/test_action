@@ -1,0 +1,44 @@
+name: Matrix Test
+on:
+  workflow_dispatch:
+    inputs:
+      choice1:
+        description: 'choice1'
+        required: true
+        type: choice
+        options:
+          - cho-one
+          - cho-two
+      str1:
+        description: 'str1'
+        required: true
+        default: 'str1'
+        type: string
+      num1:
+        description: 'num1'
+        required: true
+        default: '123'
+        type: number
+      bool1:
+        description: 'bool1'
+        required: true
+        default: false
+        type: boolean
+      environment:
+        description: 'Environment'
+        type: environment
+        required: true
+
+jobs:
+  job1:
+    name: Matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruit: [apple, pear]
+        animal: [cat, dog]
+    steps:
+      - name: matrix print
+        run: |
+          echo "fruit: ${{matrix.fruit}}, animal: ${{matrix.animal}}"
+
