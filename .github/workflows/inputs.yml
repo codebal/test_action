@@ -37,6 +37,9 @@ jobs:
     name: Input Test
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
+    env:
+      server: ${{ vars.SERVER }}
+      test: "test: ${{ vars.SERVER }}"
     steps:
 
       - name: Get Vars
