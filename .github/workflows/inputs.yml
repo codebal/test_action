@@ -34,7 +34,7 @@ env:
 
 jobs:
   job1:
-    name: input-vars
+    name: Input Test
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
@@ -57,4 +57,16 @@ jobs:
         run: |
           echo "only run in dev enviroment"
           echo "choice1 : ${{ inputs.choice1 }}"
-          echo "github.env : " ${{ github.env }}
+
+  job2:
+    name: Matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruit: [apple, pear]
+        animal: [cat, dog]
+    steps:
+      - name: matrix print
+        run: |
+          echo "fruit: ${{matrix.fruit}}, animal: ${{matrix.animal}}"
+
