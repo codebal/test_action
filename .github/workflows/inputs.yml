@@ -54,7 +54,7 @@ jobs:
           echo "env var.SERVER : ${{ vars.SERVER }}"
 
       - name: Condition - Env == dev
-        if: github.env == 'dev' 
         run: |
           echo "only run in dev enviroment"
           echo "choice1 : ${{ inputs.choice1 }}"
+          echo "github.env : " ${{ github.env }}
