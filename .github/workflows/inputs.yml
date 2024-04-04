@@ -58,15 +58,3 @@ jobs:
           echo "only run in dev enviroment"
           echo "choice1 : ${{ inputs.choice1 }}"
 
-  job2:
-    name: Matrix
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        fruit: [apple, pear]
-        animal: [cat, dog]
-    steps:
-      - name: matrix print
-        run: |
-          echo "fruit: ${{matrix.fruit}}, animal: ${{matrix.animal}}"
-
