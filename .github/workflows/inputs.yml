@@ -52,3 +52,7 @@ jobs:
           echo "env NAME : $NAME"
           echo "env test : $test"
           echo "env var.SERVER : ${{ vars.SERVER }}"
+
+      - name: Condition
+        run: |
+          echo "choice1 : ${{ inputs.choice1 }}"
